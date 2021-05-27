@@ -28,5 +28,6 @@ const ByebyeEmail = (email, name) => {
 }
 
 module.exports = {
-    welcomeEmail
+    welcomeEmail,
+    ByebyeEmail
 }

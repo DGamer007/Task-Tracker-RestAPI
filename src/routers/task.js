@@ -5,9 +5,6 @@ const router = express.Router()
 
 // Read User Profile
 router.get('/tasks/user', auth, async (req, res) => {
-    // const task = await Task.findOne({ author: req.user._id.toString() })
-    // await task.populate('author').execPopulate()
-    // console.log(task.author)
     console.log(req.user)
 })
 
@@ -23,7 +20,6 @@ router.get('/tasks/me', auth, async (req, res) => {
         const parts = req.query.sortBy.split(':')
         sort[parts[0]] = parts[1] === 'desc' ? -1 : 1
     }
-
 
     try {
         await req.user.populate({
@@ -47,7 +43,7 @@ router.get('/tasks/:id', auth, async (req, res) => {
         const task = await Task.findOne({ _id: req.params.id, author: req.user._id })
 
         if (!task) {
-            res.status(404).send('No data found!')
+            return res.status(404).send('No data found!')
         }
         res.send(task)
     } catch (error) {
