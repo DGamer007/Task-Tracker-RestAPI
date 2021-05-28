@@ -7,7 +7,7 @@ beforeEach(setDatabase)
 
 test('Should Create Task', async () => {
     const response = await request(app)
-        .post('/tasks')
+        .post('/me/task')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             description: 'Some Other Task',
@@ -23,7 +23,7 @@ test('Should Create Task', async () => {
 
 test('Should not Create Task without Authorization', async () => {
     await request(app)
-        .post('/tasks')
+        .post('/me/task')
         .send({
             description: 'Some Other Task',
             completed: false
@@ -33,7 +33,7 @@ test('Should not Create Task without Authorization', async () => {
 
 test('Should not Create Task with Invalid Details', async () => {
     await request(app)
-        .post('/tasks')
+        .post('/me/task')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             completed: 'true'
@@ -43,7 +43,7 @@ test('Should not Create Task with Invalid Details', async () => {
 
 test('Should Read all Tasks of a User', async () => {
     const response = await request(app)
-        .get('/tasks/me')
+        .get('/me/tasks')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send()
         .expect(200)
@@ -53,14 +53,14 @@ test('Should Read all Tasks of a User', async () => {
 
 test('Should not Read Tasks without Authorization', async () => {
     const response = await request(app)
-        .get('/tasks/me')
+        .get('/me/tasks')
         .send()
         .expect(401)
 })
 
 test('Should not Read Tasks of Other User', async () => {
     const response = await request(app)
-        .get(`/tasks/${Task3._id}`)
+        .get(`/me/tasks/${Task3._id}`)
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send()
         .expect(404)
@@ -68,7 +68,7 @@ test('Should not Read Tasks of Other User', async () => {
 
 test('Should Delete Tasks of User', async () => {
     await request(app)
-        .delete(`/tasks/${Task1._id}`)
+        .delete(`/me/tasks/${Task1._id}`)
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send()
         .expect(200)
@@ -79,7 +79,7 @@ test('Should Delete Tasks of User', async () => {
 
 test('Should not Delete Task without Authorization', async () => {
     await request(app)
-        .delete(`/tasks/${Task1._id}`)
+        .delete(`/me/tasks/${Task1._id}`)
         .send()
         .expect(401)
 
@@ -89,7 +89,7 @@ test('Should not Delete Task without Authorization', async () => {
 
 test('Should not Delete Task of other Users', async () => {
     await request(app)
-        .delete(`/tasks/${Task1._id}`)
+        .delete(`/me/tasks/${Task1._id}`)
         .set('Authorization', `Bearer ${User2.tokens[0].token}`)
         .send()
         .expect(404)
@@ -100,7 +100,7 @@ test('Should not Delete Task of other Users', async () => {
 
 test('Should Update Task', async () => {
     await request(app)
-        .patch(`/tasks/${Task1._id}`)
+        .patch(`/me/tasks/${Task1._id}`)
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             description: 'Changed Task',
@@ -114,7 +114,7 @@ test('Should Update Task', async () => {
 
 test('Should not Update Task with Invalid details', async () => {
     await request(app)
-        .patch(`/tasks/${Task1._id}`)
+        .patch(`/me/tasks/${Task1._id}`)
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             name: 'Changed Task',
@@ -128,7 +128,7 @@ test('Should not Update Task with Invalid details', async () => {
 
 test('Should not Update Task of other Users', async () => {
     await request(app)
-        .patch(`/tasks/${Task3._id}`)
+        .patch(`/me/tasks/${Task3._id}`)
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             description: 'Changed Task',
@@ -142,7 +142,7 @@ test('Should not Update Task of other Users', async () => {
 
 test('Should not Update Task without Authorization', async () => {
     await request(app)
-        .patch(`/tasks/${Task1._id}`)
+        .patch(`/me/tasks/${Task1._id}`)
         .send({
             description: 'Changed Task',
             completed: true

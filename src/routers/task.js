@@ -4,12 +4,17 @@ const auth = require('../middleware/authorization')
 const router = express.Router()
 
 // Read User Profile
-router.get('/tasks/user', auth, async (req, res) => {
-    console.log(req.user)
-})
+// router.get('/task/me', auth, async (req, res) => {
+//     console.log(req.user)
+// })
 
-// Read all tasks for current user
-router.get('/tasks/me', auth, async (req, res) => {
+// Read Tasks of Current User
+// Queries :-
+// /me/tasks?completed=true/false
+// /me/tasks?sortBy=description:desc
+// /me/tasks?limit=2
+// /me/tasks?skip=0
+router.get('/me/tasks', auth, async (req, res) => {
     const match = {}
     const sort = {}
 
@@ -37,8 +42,8 @@ router.get('/tasks/me', auth, async (req, res) => {
     }
 })
 
-// Read task by TASKid
-router.get('/tasks/:id', auth, async (req, res) => {
+// Read Task
+router.get('/me/tasks/:id', auth, async (req, res) => {
     try {
         const task = await Task.findOne({ _id: req.params.id, author: req.user._id })
 
@@ -52,7 +57,7 @@ router.get('/tasks/:id', auth, async (req, res) => {
 })
 
 // Create Task
-router.post('/tasks', auth, async (req, res) => {
+router.post('/me/task', auth, async (req, res) => {
     try {
         const task = new Task({
             ...req.body,
@@ -66,8 +71,8 @@ router.post('/tasks', auth, async (req, res) => {
     }
 })
 
-// Update Task by TASKid
-router.patch('/tasks/:id', auth, async (req, res) => {
+// Update Task
+router.patch('/me/tasks/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['description', 'completed']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -92,8 +97,8 @@ router.patch('/tasks/:id', auth, async (req, res) => {
     }
 })
 
-// Delete Task by TASKid
-router.delete('/tasks/:id', auth, async (req, res) => {
+// Delete Task
+router.delete('/me/tasks/:id', auth, async (req, res) => {
     try {
         const task = await Task.findOneAndDelete({ _id: req.params.id, author: req.user._id })
         if (!task) {

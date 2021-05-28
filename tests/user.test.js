@@ -7,7 +7,7 @@ beforeEach(setDatabase)
 
 test('Should Signup', async () => {
     const response = await request(app)
-        .post('/users')
+        .post('/signup')
         .send({
             name: 'SomeName',
             email: 'something@example.com',
@@ -30,7 +30,7 @@ test('Should Signup', async () => {
 
 test('Should not Signup with same email ID', async () => {
     await request(app)
-        .post('/users')
+        .post('/signup')
         .send({
             name: 'SomeName',
             email: 'somethingmore1@example.com',
@@ -64,31 +64,34 @@ test('Should not Signup with invalid details', async () => {
     ]
 
     request(app)
-        .post('/users')
+        .post('/signup')
         .send(fakeUsers[0])
         .expect(400)
 
     request(app)
-        .post('/users')
+        .post('/signup')
         .send(fakeUsers[1])
         .expect(400)
 
     request(app)
-        .post('/users')
+        .post('/signup')
         .send(fakeUsers[2])
         .expect(400)
 
     request(app)
-        .post('/users')
+        .post('/signup')
         .send(fakeUsers[3])
         .expect(400)
 })
 
 test('Should Login', async () => {
-    const response = await request(app).post('/users/login').send({
-        email: User1.email,
-        password: User1.password
-    }).expect(200)
+    const response = await request(app)
+        .post('/login')
+        .send({
+            email: User1.email,
+            password: User1.password
+        })
+        .expect(200)
 
     const user = await User.findById(User1._id)
 
@@ -97,7 +100,7 @@ test('Should Login', async () => {
 
 test('Should not Login with false credentials', async () => {
     await request(app)
-        .post('/users/login')
+        .post('/login')
         .send({
             email: User1.email,
             password: 'thisispass'
@@ -106,7 +109,7 @@ test('Should not Login with false credentials', async () => {
 
 test('Should Read Profile', async () => {
     await request(app)
-        .get('/users/me')
+        .get('/me')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send()
         .expect(200)
@@ -114,14 +117,14 @@ test('Should Read Profile', async () => {
 
 test('Should not Read Profile without Authorization', async () => {
     await request(app)
-        .get('/users/me')
+        .get('/me')
         .send()
         .expect(401)
 })
 
 test('Should Delete Account', async () => {
     await request(app)
-        .delete('/users/me')
+        .delete('/me')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send()
         .expect(200)
@@ -132,14 +135,14 @@ test('Should Delete Account', async () => {
 
 test('Should not Delete Account without Authorization', async () => {
     await request(app)
-        .delete('/users/me')
+        .delete('/me')
         .send()
         .expect(401)
 })
 
 test('Should Upload Avatar', async () => {
     await request(app)
-        .post('/users/me/avatar')
+        .post('/me/avatar')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .attach('upload', 'tests/fixtures/pic.jpg')
         .expect(200)
@@ -150,7 +153,7 @@ test('Should Upload Avatar', async () => {
 
 test('Should Update details', async () => {
     await request(app)
-        .patch('/users/me')
+        .patch('/me')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             name: 'SomeName3'
@@ -163,7 +166,7 @@ test('Should Update details', async () => {
 
 test('Should not Update User without Authorization', async () => {
     await request(app)
-        .patch('/users/me')
+        .patch('/me')
         .send({
             name: 'SomeName3'
         })
@@ -172,7 +175,7 @@ test('Should not Update User without Authorization', async () => {
 
 test('Should not Update User with Invalid details', async () => {
     await request(app)
-        .patch('/users/me')
+        .patch('/me')
         .set('Authorization', `Bearer ${User1.tokens[0].token}`)
         .send({
             location: 'SomeCountry'

@@ -2,17 +2,10 @@ const sendGridMail = require('@sendgrid/mail')
 
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-// sendGridMail.send({
-//     to: 'd_gamer_@outlook.com',
-//     from: 'prajapatidhruv266@gmail.com',
-//     subject: 'Test Mail',
-//     text: 'hey there! this is sendgrid mail'
-// })
-
 const welcomeEmail = (email, name) => {
     sendGridMail.send({
         to: email,
-        from: 'prajapatidhruv266@gmail.com',
+        from: process.env.SENDGRID_SENDER_EMAIL,
         subject: 'Welcome',
         text: `Welcome to the App, ${name}`
     })
@@ -21,7 +14,7 @@ const welcomeEmail = (email, name) => {
 const ByebyeEmail = (email, name) => {
     sendGridMail.send({
         to: email,
-        from: 'prajapatidhruv266@gmail.com',
+        from: process.env.SENDGRID_SENDER_EMAIL,
         subject: 'See you soon!',
         text: `Bye Bye ${name}`
     })
