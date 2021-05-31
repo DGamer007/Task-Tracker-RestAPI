@@ -3,11 +3,6 @@ const Task = require('../models/task')
 const auth = require('../middleware/authorization')
 const router = express.Router()
 
-// Read User Profile
-// router.get('/task/me', auth, async (req, res) => {
-//     console.log(req.user)
-// })
-
 // Read Tasks of Current User
 // Queries :-
 // /me/tasks?completed=true/false

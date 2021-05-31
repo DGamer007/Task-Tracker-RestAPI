@@ -23,12 +23,6 @@ router.get('/me', auth, async (req, res) => {
     res.send(req.user)
 })
 
-// Read Tasks from Profile
-// router.get('/me/tasks', auth, async (req, res) => {
-//     await req.user.populate('tasks').execPopulate()
-//     console.log(req.user.tasks)
-// })
-
 // Sign UP
 router.post('/signup', async (req, res) => {
     try {
@@ -147,23 +141,6 @@ router.delete('/me/avatar', auth, async (req, res) => {
     await req.user.save()
     res.send('Deleted Successfully')
 })
-
-
-// router.get('/users/:id/avatar', async (req, res) => {
-//     try {
-//         const user = await User.findById(req.params.id)
-
-//         if (!user || !user.avatar) {
-//             throw new Error('File not Found')
-//         }
-
-//         res.set('Content-Type', 'image/png')
-//         res.send(user.avatar)
-
-//     } catch (error) {
-//         return res.status(404).send(error)
-//     }
-// })
 
 // Read Profile Picture
 router.get('/me/avatar', auth, async (req, res) => {
