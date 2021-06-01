@@ -162,7 +162,7 @@ StatusCode: ```200```
 *body*
 
 ```
-Logged out of all devices successfully.
+    Logged out of all devices successfully.
 ```
 
 **or**
@@ -172,7 +172,7 @@ StatusCode: ```200```
 *body*
 
 ```
-Successfully Logged out of all devices except this.
+    Successfully Logged out of all devices except this.
 ```
 
 **or**
@@ -182,7 +182,7 @@ StatusCode: ```200```
 *body*
 
 ```
-Logged out successfully.
+    Logged out successfully.
 ```
 
 **or**
@@ -202,7 +202,7 @@ StatusCode: ```401```
 StatusCode: ```500```
 
 ```
-Server Error.
+    Server Error.
 ```
 
 <br>
@@ -370,6 +370,177 @@ StatusCode: ```401```
 <br>
 <br>
 
+#### Upload Profile Picture
+
+This will Upload Profile Picture for Current User.
+
+method: ```POST```
+
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/avatar
+> ```
+
+<br>
+
+**request**
+
+*headers*
+
+```javascript
+    {
+        Authorization: `Bearer ${token}`
+    }
+```
+
+*formData*
+
+```javascript
+    {
+        'upload': fs.createReadStream({image-Path})
+    }
+```
+
+<br>
+
+**response**
+
+StatusCode: ```200```
+
+```
+    Success
+```
+
+**or**
+
+StatusCode: ```400```
+
+*body*
+
+```javascript
+    {
+        error: {error Message}
+    }
+```
+
+**or**
+
+StatusCode: ```401```
+
+*body*
+
+```javascript
+    {
+        error: 'Please Authenticate.'
+    }
+```
+
+
+<br>
+<br>
+
+#### Delete Profile Picture
+
+This will Delete Profile Picture for Current User.
+
+method: ```DELETE```
+
+>```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/avatar
+>```
+
+<br>
+
+**request**
+
+*headers*
+
+```javascript
+    {
+        Authorization: `Bearer ${token}`
+    }
+```
+
+<br>
+
+**response**
+
+StatusCode: ```200```
+
+*body*
+
+```
+    Deleted Successfully.
+```
+
+<br>
+<br>
+
+#### Read Profile Picture
+
+This will Read Profile Picture of Current User.
+
+method: ```GET```
+
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/avatar
+> ```
+
+<br>
+
+**request**
+
+*headers*
+
+```javascript
+    {
+        Authorization: `Bearer ${token}`
+    }
+```
+<br>
+
+**response**
+
+StatusCode: ```200```
+
+*headers*
+
+```json
+    {
+        "Content-Type": "image/png"
+    }
+```
+
+*body*
+
+```
+    Profile Picture.
+```
+
+**or**
+
+StatusCode: ```404```
+
+*body*
+
+```javascript
+    {
+        error: 'File not found.'
+    }
+```
+
+**or**
+
+StatusCode: ```500```
+
+*body*
+
+```
+    Server Error.
+```
+
+<br>
+<br>
+
 #### Delete User Account
 
 This will Delete User Account
@@ -422,7 +593,7 @@ StatusCode: ```401```
 StatusCode: ```500```
 
 ``` 
-Server Error 
+    Server Error 
 ```
 
 <br>
@@ -477,7 +648,7 @@ StatusCode: ```200```
 StatusCode: ```400```
 
 ```
-Bad Request.
+    Bad Request.
 ```
 
 **or**
@@ -563,7 +734,7 @@ StatusCode: ```401```
 StatusCode: ```500```
 
 ```
-Server Error.
+    Server Error.
 ```
 
 <br>
@@ -586,7 +757,7 @@ method: ```GET```
 *params*
 
 ```
-Task_id
+    Task_id
 ```
 
 *headers*
@@ -640,7 +811,7 @@ StatusCode: ```404```
 StatusCode: ```500```
 
 ```
-Server Error
+    Server Error
 ```
 
 <br>
@@ -663,7 +834,7 @@ method: ```PATCH```
 *params*
 
 ```
-Task_id
+    Task_id
 ```
 
 *headers*
@@ -713,7 +884,7 @@ StatusCode: ```400```
 StatusCode: ```400```
 
 ```
-Bad Request.
+    Bad Request.    
 ```
 
 **or**
@@ -748,7 +919,7 @@ method: ```DELETE```
 *params*
 
 ```
-Task_id
+    Task_id
 ```
 
 *headers*
@@ -802,7 +973,7 @@ StatusCode: ```404```
 StatusCode: ```500```
 
 ```
-Server Error.
+    Server Error.
 ```
 
 <br>
@@ -811,39 +982,39 @@ Server Error.
 **userSchema**
 
 ```javascript
-{
-    name:{
-        type: String,
-        required: true
-    },
-    email:{
-        type: String,
-        required: true,
-        unique: true
-    },
-    password:{
-        type: String,
-        required: true,
-        minlength: 7
-    },
-    age:{
-        type: Number,
-        default: 0
+    {
+        name:{
+            type: String,
+            required: true
+        },
+        email:{
+            type: String,
+            required: true,
+            unique: true
+        },
+        password:{
+            type: String,
+            required: true,
+            minlength: 7
+        },
+        age:{
+            type: Number,
+            default: 0
+        }
     }
-}
 ```
 
 **taskSchema**
 
 ```javascript
-{
-    description:{
-        type: String,
-        required: true
-    },
-    completed:{
-        type: Boolean,
-        default: false
+    {
+        description:{
+            type: String,
+            required: true
+        },
+        completed:{
+            type: Boolean,
+            default: false
+        }
     }
-}
 ```
