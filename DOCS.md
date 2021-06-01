@@ -1,6 +1,4 @@
-# Task-Tracker-RestAPI
-
-## Documentation 
+# Task-Tracker-RestAPI Documentation 
 
 Server-URL:
 
@@ -42,7 +40,7 @@ StatusCode: ```201```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -52,7 +50,7 @@ StatusCode: ```400```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -98,7 +96,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -108,7 +106,7 @@ StatusCode: ```400```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -161,7 +159,7 @@ StatusCode: ```200```
 Logged out of all devices successfully.
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```200```
 
@@ -171,7 +169,7 @@ StatusCode: ```200```
 Successfully Logged out of all devices except this.
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```200```
 
@@ -181,7 +179,7 @@ StatusCode: ```200```
 Logged out successfully.
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -193,7 +191,7 @@ StatusCode: ```401```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```500```
 
@@ -238,7 +236,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -282,14 +280,14 @@ method: ```PATCH```
     }                                    
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 ```javascript
     {
         password: 'blahblahB!@H'
     }                                    
 ```
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 ```javascript
     {
@@ -311,7 +309,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -323,7 +321,7 @@ StatusCode: ```400```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -335,7 +333,7 @@ StatusCode: ```400```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -347,7 +345,7 @@ StatusCode: ```400```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -395,7 +393,7 @@ StatusCode: ```200```
         userSchema
     }
 ```
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -407,7 +405,7 @@ StatusCode: ```401```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```500```
 
@@ -460,7 +458,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -468,7 +466,7 @@ StatusCode: ```400```
 Bad Request.
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -532,7 +530,7 @@ StatusCode: ```200```
     ]
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -544,7 +542,7 @@ StatusCode: ```401```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```500```
 
@@ -595,7 +593,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -607,7 +605,7 @@ StatusCode: ```401```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```404```
 
@@ -619,7 +617,7 @@ StatusCode: ```404```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```500```
 
@@ -678,7 +676,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -690,7 +688,7 @@ StatusCode: ```400```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```400```
 
@@ -698,7 +696,7 @@ StatusCode: ```400```
 Bad Request.
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```404```
 
@@ -753,7 +751,7 @@ StatusCode: ```200```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```401```
 
@@ -765,7 +763,7 @@ StatusCode: ```401```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```404```
 
@@ -777,7 +775,7 @@ StatusCode: ```404```
     }
 ```
 
-<p style="text-align:center;" ><strong>or</strong></p>
+**or**
 
 StatusCode: ```500```
 
