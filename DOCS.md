@@ -13,7 +13,9 @@ This will Create a User Account
 
 method: ```POST```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/signup```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/signup
+> ```
 
 <br>
 
@@ -69,7 +71,9 @@ This will Login into User Account
 
 method: ```POST```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/login```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/login
+> ```
 
 <br>
 
@@ -125,7 +129,9 @@ This will Logout from User Account
 
 method: ```POST```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/logout```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/logout
+> ```
 
 <br>
 
@@ -208,7 +214,9 @@ This will Read User Account Data
 
 method: ```GET```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me
+> ```
 
 <br>
 
@@ -257,7 +265,9 @@ This will Update User Account or Change User Account Details
 
 method: ```PATCH```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me
+> ```
 
 <br>
 
@@ -366,7 +376,9 @@ This will Delete User Account
 
 method: ```DELETE```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me
+> ```
 
 <br>
 
@@ -422,7 +434,9 @@ This will Create Task for Current User
 
 method: ```POST```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me/task```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/task
+> ```
 
 <br>
 
@@ -487,7 +501,9 @@ This will read all tasks of Current User
 
 method: ```GET```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks
+> ```
 
 <br>
 
@@ -559,7 +575,9 @@ This will Read indivudual Task of Current User
 
 method: ```GET```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks/:id```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks/:id
+> ```
 
 <br>
 
@@ -634,7 +652,9 @@ This will Update Task details for Current User.
 
 method: ```PATCH```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks/:id```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks/:id
+> ```
 
 <br>
 
@@ -717,7 +737,9 @@ This will Delete task for Current User.
 
 method: ```DELETE```
 
-> ```https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks/:id```
+> ```
+> https://dgamer-task-tracker-rest-api.herokuapp.com/me/tasks/:id
+> ```
 
 <br>
 
