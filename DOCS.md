@@ -2,12 +2,29 @@
 
 Server-URL:
 
-        https://dgamer-task-tracker-api.herokuapp.com
+        https://dgamer-task-tracker-api.herokuapp.com 
+
+Guide:
+
+- [Signup](#signup)
+- [Login](#login)
+- [Logout](#logout)
+- [Read User Account](#read-user-account)
+- [Update User Account](#update-user-account)
+- [Upload Profile Picture](#upload-profile-picture)
+- [Delete Profile Picture](#delete-profile-picture)
+- [Read Profile Picture](#read-profile-picture)
+- [Delete User Account](#delete-user-account)
+- [Create Task](#create-task)
+- [Read Tasks](#read-tasks)
+- [Read Task](#read-task)
+- [Update Task](#update-task)
+- [Delete Task](#delete-task)
 
 <br>
 <br>
 
-#### Signup
+<h4 id="signup">Signup</h4>
 
 This will Create a User Account
 
@@ -65,7 +82,7 @@ StatusCode: ```400```
 <br>
 <br>
 
-#### Login
+<h4 id="login">Login</h4>
 
 This will Login into User Account
 
@@ -123,7 +140,7 @@ StatusCode: ```400```
 <br>
 <br>
 
-#### Logout
+<h4 id="logout">Logout</h4>
 
 This will Logout from User Account
 
@@ -208,7 +225,7 @@ StatusCode: ```500```
 <br>
 <br>
 
-#### Read User Account
+<h4 id="read-user-account">Read User Account</h4>
 
 This will Read User Account Data
 
@@ -259,7 +276,7 @@ StatusCode: ```401```
 <br>
 <br>
 
-#### Update User Account
+<h4 id="update-user-account">Update User Account</h4>
 
 This will Update User Account or Change User Account Details
 
@@ -370,7 +387,7 @@ StatusCode: ```401```
 <br>
 <br>
 
-#### Upload Profile Picture
+<h4 id="upload-profile-picture">Upload Profile Picture</h4>
 
 This will Upload Profile Picture for Current User.
 
@@ -438,7 +455,7 @@ StatusCode: ```401```
 <br>
 <br>
 
-#### Delete Profile Picture
+<h4 id="delete-profile-picture">Delete Profile Picture</h4>
 
 This will Delete Profile Picture for Current User.
 
@@ -475,7 +492,7 @@ StatusCode: ```200```
 <br>
 <br>
 
-#### Read Profile Picture
+<h4 id="read-profile-picture">Read Profile Picture</h4>
 
 This will Read Profile Picture of Current User.
 
@@ -541,7 +558,7 @@ StatusCode: ```500```
 <br>
 <br>
 
-#### Delete User Account
+<h4 id="delete-user-account">Delete User Account</h4>
 
 This will Delete User Account
 
@@ -599,7 +616,7 @@ StatusCode: ```500```
 <br>
 <br>
 
-#### Create Task
+<h4 id="create-task">Create Task</h4>
 
 This will Create Task for Current User
 
@@ -666,7 +683,7 @@ StatusCode: ```401```
 <br>
 <br>
 
-#### Read Tasks
+<h4 id="read-tasks">Read Tasks</h4>
 
 This will read all tasks of Current User
 
@@ -740,7 +757,7 @@ StatusCode: ```500```
 <br>
 <br>
 
-#### Read Task
+<h4 id="read-task">Read Task</h4>
 
 This will Read indivudual Task of Current User
 
@@ -817,7 +834,7 @@ StatusCode: ```500```
 <br>
 <br>
 
-#### Update Task
+<h4 id="update-task">Update Task</h4>
 
 This will Update Task details for Current User.
 
@@ -902,7 +919,7 @@ StatusCode: ```404```
 <br>
 <br>
 
-#### Delete Task
+<h4 id="delete-task">Delete Task</h4>
 
 This will Delete task for Current User.
 
