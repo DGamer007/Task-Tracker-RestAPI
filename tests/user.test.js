@@ -107,6 +107,57 @@ test('Should not Login with false credentials', async () => {
         }).expect(400)
 })
 
+test('Should logout from current Device', async () => {
+    const response = await request(app)
+        .post('/logout')
+        .set('Authorization', `Bearer ${User1.tokens[User1.tokens.length - 1].token}`)
+        .send()
+        .expect(200)
+
+    expect(response.text).toBe('Logged Out Successfully')
+})
+
+test('Should not logout without Authorization', async () => {
+    await request(app)
+        .post('/logout')
+        .send()
+        .expect(401)
+})
+
+test('Should logout from all devices', async () => {
+    const response = await request(app)
+        .post('/logout?all=true')
+        .set('Authorization', `Bearer ${User1.tokens[User1.tokens.length - 1].token}`)
+        .send()
+        .expect(200)
+
+    expect(response.text).toBe('Logged Out of All devices Successfully.')
+})
+
+test('Should not logout from all devices without Authorization', async () => {
+    await request(app)
+        .post('/logout?all=true')
+        .send()
+        .expect(401)
+})
+
+test('Should logout from all devices except current device', async () => {
+    const response = await request(app)
+        .post('/logout?exceptthis=true')
+        .set('Authorization', `Bearer ${User1.tokens[User1.tokens.length - 1].token}`)
+        .send()
+        .expect(200)
+
+    expect(response.text).toBe('Successfully Logged out of all devices except this.')
+})
+
+test('Should not logout from all devices without Authorization', async () => {
+    await request(app)
+        .post('/logout?exceptthis=true')
+        .send()
+        .expect(401)
+})
+
 test('Should Read Profile', async () => {
     await request(app)
         .get('/me')
